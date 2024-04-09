@@ -29,6 +29,10 @@ const HomeCon = styled.div`
     justify-content: center;
     padding: 10rem 0 0 0;
   }
+  @media (max-width: 400px) {
+    justify-content: center;
+    padding: 8rem 0 0 0;
+  }
 `;
 const Text = styled.h1`
   color: var(--text);
