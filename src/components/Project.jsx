@@ -50,11 +50,17 @@ const AboutMe = styled.h1`
   font-weight: bold;
   color: var(--navTextHover);
   text-transform: uppercase;
+  @media (max-width: 600px) {
+    font-size: 2rem;
+  }
 `;
 const AboutDes = styled.p`
   font-size: 1.4rem;
   color: var(--lessText);
   margin-top: 1.5rem;
+  @media (max-width: 600px) {
+    font-size: var(--mobileLargeSize);
+  }
 `;
 const Tech = styled.div`
   display: flex;
@@ -72,12 +78,18 @@ const Text = styled.p`
   font-size: 1.5rem;
   color: var(--navTextHover);
   font-weight: bold;
+  @media (max-width: 600px) {
+    font-size: var(--mobileLargeSize);
+  }
 `;
 
 const Texts = styled.p`
   display: flex;
   align-items: center;
   font-size: 1.5rem;
+  @media (max-width: 600px) {
+    font-size: var(--mobileLargeSize);
+  }
   gap: 0.1rem;
   color: var(--Text);
   font-weight: bold;
@@ -125,18 +137,7 @@ export default function Project({ inView, first, second }) {
           {/* <ImgBox>
             <Img src="/About.jpeg" />
           </ImgBox> */}
-          <Video
-            src="/clip.mp4"
-            type="video/mp4"
-            muted
-            loop
-            autoPlay
-            // onMouseEnter={(event) => event.target.play()}
-            // onMouseLeave={(event) => {
-            //   event.target.pause();
-            //   event.target.currentTime = 0;
-            // }}
-          />
+          <Video src="/clip.mp4" type="video/mp4" muted loop autoPlay />
           <DesBox>
             <AboutMe>Swift</AboutMe>
             <AboutDes>

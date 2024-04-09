@@ -36,14 +36,14 @@ const Text = styled.h1`
   @media (max-width: 865px) {
     font-size: 4rem;
   }
+  @media (max-width: 600px) {
+    font-size: 5.5rem;
+  }
   @media (max-width: 610px) {
-    font-size: 4.5rem;
+    font-size: 5rem;
   }
-  @media (max-width: 550px) {
-    font-size: 4.2rem;
-  }
-  @media (max-width: 375px) {
-    font-size: 3.7rem;
+  @media (max-width: 410px) {
+    font-size: 4.6rem;
   }
 `;
 const ImgSec = styled.div`
@@ -84,6 +84,9 @@ const TextDes = styled.div`
 const Subtext = styled.div`
   font-size: 1.75rem;
   color: var(--lessText);
+  @media (max-width: 600px) {
+    display: none;
+  }
   @media (max-width: 610px) {
     font-size: 2rem;
   }
@@ -101,6 +104,9 @@ const SubStacktext = styled.div`
   font-weight: bold;
   font-size: 2rem;
   gap: 1rem;
+  @media (max-width: 600px) {
+    font-size: 2.2rem;
+  }
 `;
 const Socials = styled.div`
   display: flex;
@@ -150,6 +156,34 @@ const Techbox = styled.div`
 `;
 const AutoWidth = styled.div`
   width: 60%;
+`;
+const AutoWidthmobile = styled.div`
+  width: 60%;
+  height: 12vh;
+  display: none;
+  @media (max-width: 600px) {
+    display: inline-block;
+  }
+  @media (max-width: 610px) {
+    display: inline-block;
+    width: 70%;
+  }
+  @media (max-width: 550px) {
+    display: inline-block;
+    width: 75%;
+  }
+  @media (max-width: 525px) {
+    display: inline-block;
+    width: 80%;
+  }
+  @media (max-width: 450px) {
+    display: inline-block;
+    width: 90%;
+  }
+  @media (max-width: 375px) {
+    display: inline-block;
+    width: 80%;
+  }
 `;
 const Stack = styled.img`
   width: 2.5rem;
@@ -215,6 +249,9 @@ export default function Home({ inView }) {
             Hi, I'm Edem Dominic. A front-end react
             <br /> developer based in Nigeria
           </Subtext>
+          <AutoWidthmobile>
+            <Autotype mobile={true} />
+          </AutoWidthmobile>
           <Socials>
             <FaLinkedin
               style={faLinkedin ? iconstylehover : iconstyle}

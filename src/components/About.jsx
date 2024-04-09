@@ -28,7 +28,7 @@ const DesBox = styled.div`
   padding-right: 2rem;
   width: 60%;
   transition: all 1.3s;
-  transform: translateX(100%);
+  transform: translateX(150%);
   @media (max-width: 600px) {
     padding: 0 2rem;
     align-items: center;
@@ -40,7 +40,7 @@ const ImgBox = styled.div`
   display: flex;
   justify-content: end;
   width: 40%;
-  transform: translateX(-100%);
+  transform: translateX(-200%);
   transition: all 1.3s;
   @media (max-width: 600px) {
     width: 100%;
@@ -65,17 +65,24 @@ const AboutMe = styled.h1`
   color: var(--navTextHover);
   text-transform: uppercase;
   @media (max-width: 600px) {
+    font-size: 2.3rem;
     margin-right: 2rem;
   }
 `;
 const AboutText = styled.span`
   font-size: 2rem;
   color: var(--Text);
+  @media (max-width: 600px) {
+    font-size: 2.3rem;
+  }
 `;
 const AboutDes = styled.p`
   font-size: 1.4rem;
   color: var(--lessText);
   margin-top: 1.5rem;
+  @media (max-width: 600px) {
+    font-size: 1.8rem;
+  }
 `;
 export default function About({ inView }) {
   const { dispatch, state, aboutRef, homeInView } = useContext(Context);

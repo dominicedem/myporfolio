@@ -9,13 +9,19 @@ const NavCon = styled.div`
   align-items: center;
   justify-content: space-between;
   width: 100vw;
-  padding: 2.5vh 3vw;
+  padding: 2.5vh 1vw;
   background: var(--background);
+  @media (max-width: 600px) {
+    padding: 2.5vh 3vw;
+  }
 `;
 const NavName = styled.p`
   font-size: 1.8rem;
   font-weight: bold;
   color: var(--text);
+  @media (max-width: 600px) {
+    font-size: 2.4rem;
+  }
 `;
 const NameBox = styled.div`
   display: flex;
@@ -32,6 +38,9 @@ const NavList = styled.ul`
 `;
 const NavLogo = styled.img`
   width: 3rem;
+  @media (max-width: 600px) {
+    width: 4rem;
+  }
 `;
 const Lists = styled.li`
   font-size: 1.8rem;
@@ -53,7 +62,7 @@ const MenuBox = styled.div`
   }
 `;
 const iconstyle = {
-  fontSize: "2.7rem",
+  fontSize: "3rem",
   cursor: "pointer",
   color: " var(--navTextHover)",
   transition: "all 0.3s",

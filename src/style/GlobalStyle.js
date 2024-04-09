@@ -13,6 +13,8 @@ const GlobalStyle = createGlobalStyle`
     --brown:#BA968A;
     --githover: #262626be;
     --footerbackground: #0075a0f5;
+    --mobileLargeSize: 1.8rem;
+    --mobileSmallTextSize: 1.6rem;
 }
 
     html {

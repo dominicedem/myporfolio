@@ -60,15 +60,16 @@ const Design3 = styled.div`
   width: 2.5rem;
   border: 2px solid var(--navTextHover);
   position: absolute;
-  top: 35%;
+  top: 30%;
   left: 3%;
 `;
 const Design4 = styled.div`
-  height: 2.5rem;
-  width: 2.5rem;
+  height: 2.8rem;
+  width: 2.8rem;
   border: 2px solid var(--brown);
+  border-radius: 50%;
   position: absolute;
-  top: 10%;
+  top: 5%;
   right: 10%;
 `;
 const Design5 = styled.div`
@@ -147,12 +148,15 @@ const MenuBox = styled.div`
 `;
 const AboutStyle = styled.div`
   width: 99.3vw;
-  padding: 10rem 0 21rem 0;
+  padding: 17rem 0 21rem 0;
   display: flex;
   justify-content: center;
   align-items: center;
   position: relative;
   overflow: hidden;
+  @media (max-width: 600px) {
+    padding: 12rem 0 21rem 0;
+  }
 `;
 const ProjectStyles = styled.div`
   width: 99.3vw;
@@ -178,10 +182,16 @@ const AboutMe = styled.h1`
   font-weight: bold;
   color: var(--navTextHover);
   text-transform: uppercase;
+  @media (max-width: 600px) {
+    font-size: 2.5rem;
+  }
 `;
 const AboutText = styled.span`
   font-size: 1.8rem;
   color: var(--Text);
+  @media (max-width: 600px) {
+    font-size: 2rem;
+  }
 `;
 const NofifyBox = styled.div`
   position: fixed;
@@ -219,6 +229,9 @@ const Text = styled.span`
   font-size: 1.7rem;
   font-weight: bold;
   color: var(--text);
+  @media (max-width: 600px) {
+    font-size: 2.5rem;
+  }
 `;
 
 const FooterStyle = styled.div`
