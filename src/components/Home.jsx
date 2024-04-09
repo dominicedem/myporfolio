@@ -145,7 +145,7 @@ const Techbox = styled.div`
   }
   @media (max-width: 610px) {
     width: fit-content;
-    margin: 5rem auto;
+    margin: 4rem auto;
   }
   @media (max-width: 550px) {
     font-size: 1.5rem;
@@ -164,7 +164,7 @@ const AutoWidthmobile = styled.div`
   @media (max-width: 600px) {
     display: inline-block;
   }
-  @media (max-width: 610px) {
+  @media (max-width: 600px) {
     display: inline-block;
     width: 70%;
   }
