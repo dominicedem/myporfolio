@@ -147,7 +147,7 @@ const MenuBox = styled.div`
 `;
 const AboutStyle = styled.div`
   width: 99.3vw;
-  padding: 17rem 0 21rem 0;
+  padding: 10rem 0 21rem 0;
   display: flex;
   justify-content: center;
   align-items: center;

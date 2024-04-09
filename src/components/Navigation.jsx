@@ -9,7 +9,7 @@ const NavCon = styled.div`
   align-items: center;
   justify-content: space-between;
   width: 100vw;
-  padding: 2.5vh 1vw;
+  padding: 2.5vh 3vw;
   background: var(--background);
 `;
 const NavName = styled.p`
