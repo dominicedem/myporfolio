@@ -27,7 +27,7 @@ const HomeCon = styled.div`
   }
   @media (max-width: 610px) {
     justify-content: center;
-    padding: 12.5rem 0 0 0;
+    padding: 10rem 0 0 0;
   }
 `;
 const Text = styled.h1`
@@ -82,9 +82,9 @@ const TextDes = styled.div`
   }
 `;
 const Subtext = styled.div`
-  font-size: 1.75rem;
+  font-size: 2rem;
   color: var(--lessText);
-  @media (max-width: 600px) {
+  @media (max-width: 610px) {
     display: none;
   }
   @media (max-width: 610px) {
@@ -145,7 +145,7 @@ const Techbox = styled.div`
   }
   @media (max-width: 610px) {
     width: fit-content;
-    margin: 4rem auto;
+    margin: 3rem auto;
   }
   @media (max-width: 550px) {
     font-size: 1.5rem;
@@ -161,7 +161,7 @@ const AutoWidthmobile = styled.div`
   width: 60%;
   height: 12vh;
   display: none;
-  @media (max-width: 600px) {
+  @media (max-width: 610px) {
     display: inline-block;
   }
   @media (max-width: 600px) {
