@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { SlMenu } from "react-icons/sl";
 import { useContext } from "react";
 import { Context } from "../App";
+import useSmoothNav from "../hooks/useSmoothNav.js.js";
 
 const NavCon = styled.div`
   display: flex;
@@ -58,30 +59,8 @@ const iconstyle = {
   transition: "all 0.3s",
 };
 export default function Navigation({ projectId, aboutId, homeId, contactId }) {
-  const { setOpenMenu, state, dispatch } = useContext(Context);
-  function handleClick(param) {
-    param === "Home" &&
-      !state.homeActive &&
-      dispatch({ type: "Home", payload: true });
-    param === "About" &&
-      !state.aboutActive &&
-      dispatch({ type: "About", payload: true });
-    param === "Projects" &&
-      !state.projectsActive &&
-      dispatch({ type: "Projects", payload: true });
-    param === "Contacts" &&
-      !state.contactsActive &&
-      dispatch({ type: "Contacts", payload: true });
-    scroll(param);
-  }
-  function scroll(ele) {
-    ele === "About" && aboutId.current.scrollIntoView({ behavior: "smooth" });
-    ele === "Home" && homeId.current.scrollIntoView({ behavior: "smooth" });
-    ele === "Contacts" &&
-      contactId.current.scrollIntoView({ behavior: "smooth" });
-    ele === "Projects" &&
-      projectId.current.scrollIntoView({ behavior: "smooth" });
-  }
+  const { setOpenMenu, state } = useContext(Context);
+  const [handleClick] = useSmoothNav(projectId, aboutId, homeId, contactId);
   return (
     <NavCon>
       <NameBox>

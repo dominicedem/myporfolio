@@ -23,6 +23,9 @@ const TextBox = styled.span`
 const Text = styled.span`
   font-size: 2rem;
   color: var(--Text);
+  @media (max-width: 400px) {
+    font-size: 1.8rem;
+  }
 `;
 const SocialBox = styled.div`
   display: flex;
@@ -59,7 +62,7 @@ function Footer({ inView }) {
   return (
     <FooterStyle>
       <TextBox>
-        <Text>Learning, listening to music, coding and staying up to</Text>
+        <Text>Learning, music lover, coding and staying up to</Text>
         <Text> date with modern technologies</Text>
       </TextBox>
       <SocialBox>

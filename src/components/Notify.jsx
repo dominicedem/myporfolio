@@ -9,9 +9,7 @@ const Tests = styled.div`
   background-color: var(--background1);
   cursor: pointer;
   z-index: 10000;
-  width: 20vw;
-  margin-top: 40%;
-  margin-left: 40%;
+  width: fit-content;
   border-top-left-radius: 1rem;
   border-top-right-radius: 1rem;
   display: flex;
@@ -25,7 +23,7 @@ const Tests = styled.div`
     width: 100%;
     background-color: var(--navTextHover);
     height: 3px;
-    transition: all 3s ease-in;
+    transition: all 2s ease-in;
   }
 `;
 const iconstyle = {

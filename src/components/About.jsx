@@ -14,6 +14,11 @@ const AboutBox = styled.div`
     max-width: 62rem;
     gap: 2.8rem;
   }
+  @media (max-width: 600px) {
+    flex-direction: column;
+    width: 99.3vw;
+    align-items: center;
+  }
 `;
 const DesBox = styled.div`
   display: flex;
@@ -24,6 +29,12 @@ const DesBox = styled.div`
   width: 60%;
   transition: all 1.3s;
   transform: translateX(100%);
+  @media (max-width: 600px) {
+    padding: 0 2rem;
+    align-items: center;
+    margin-left: 2rem;
+    width: 100%;
+  }
 `;
 const ImgBox = styled.div`
   display: flex;
@@ -31,18 +42,31 @@ const ImgBox = styled.div`
   width: 40%;
   transform: translateX(-100%);
   transition: all 1.3s;
+  @media (max-width: 600px) {
+    width: 100%;
+    justify-content: center;
+  }
 `;
 const Img = styled.img`
   width: 100%;
   box-shadow: 0 1rem 1rem 0.5rem #0001;
   justify-self: end;
   border-radius: 0.5rem;
+  @media (max-width: 600px) {
+    width: 23rem;
+    height: 23rem;
+    border-radius: 50%;
+    justify-self: start;
+  }
 `;
 const AboutMe = styled.h1`
   font-size: 1.6rem;
   font-weight: bold;
   color: var(--navTextHover);
   text-transform: uppercase;
+  @media (max-width: 600px) {
+    margin-right: 2rem;
+  }
 `;
 const AboutText = styled.span`
   font-size: 2rem;

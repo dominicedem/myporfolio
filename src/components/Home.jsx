@@ -189,8 +189,7 @@ const iconstylehover = {
 const iconstyles = {
   fontSize: "5rem",
   marginBottom: "-7px",
-  marginLeft: "2rem",
-  color: "#f3f3f3c8",
+  color: "var(--text)",
 };
 const Quotestyle = {
   fontSize: "2.7rem",

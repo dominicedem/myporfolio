@@ -16,6 +16,9 @@ const AboutBox = styled.div`
     max-width: 62rem;
     gap: 2.8rem;
   }
+  @media (max-width: 600px) {
+    justify-content: center;
+  }
 `;
 const DesBox = styled.div`
   display: flex;
@@ -24,18 +27,24 @@ const DesBox = styled.div`
   gap: 1rem;
   padding-right: 2rem;
   width: 55%;
+  @media (max-width: 600px) {
+    width: 70%;
+  }
 `;
-const ImgBox = styled.div`
-  display: flex;
-  justify-content: end;
-  width: 45%;
-`;
-const Img = styled.img`
-  width: 100%;
-  box-shadow: 0 1rem 1rem 0.5rem #0001;
-  justify-self: end;
-  border-radius: 0.5rem;
-`;
+// const ImgBox = styled.div`
+//   display: flex;
+//   justify-content: end;
+//   width: 45%;
+//   @media (max-width: 600px) {
+//     display: none;
+//   }
+// `;
+// const Img = styled.img`
+//   width: 100%;
+//   box-shadow: 0 1rem 1rem 0.5rem #0001;
+//   justify-self: end;
+//   border-radius: 0.5rem;
+// `;
 const AboutMe = styled.h1`
   font-size: 1.6rem;
   font-weight: bold;
@@ -75,12 +84,16 @@ const Texts = styled.p`
   cursor: pointer;
 `;
 const Video = styled.video`
+  object-fit: fill;
   font-size: 1.5rem;
   color: var(--Text);
   font-weight: bold;
   cursor: pointer;
   width: 45%;
   box-shadow: 0 1rem 1rem 0.5rem #0001;
+  @media (max-width: 600px) {
+    display: none;
+  }
 `;
 const iconstyle = {
   fontSize: "2.6rem",
@@ -99,7 +112,7 @@ export default function Project({ inView, first, second }) {
   const { dispatch, state, aboutInVeiw, setNotify } = useContext(Context);
   function activate() {
     setNotify(true);
-    setTimeout(() => setNotify(false), 3100);
+    setTimeout(() => setNotify(false), 2100);
   }
   inView &&
     !aboutInVeiw &&
@@ -109,11 +122,23 @@ export default function Project({ inView, first, second }) {
     <AboutBox>
       {first && (
         <>
-          <ImgBox>
+          {/* <ImgBox>
             <Img src="/About.jpeg" />
-          </ImgBox>
+          </ImgBox> */}
+          <Video
+            src="/clip.mp4"
+            type="video/mp4"
+            muted
+            loop
+            autoPlay
+            // onMouseEnter={(event) => event.target.play()}
+            // onMouseLeave={(event) => {
+            //   event.target.pause();
+            //   event.target.currentTime = 0;
+            // }}
+          />
           <DesBox>
-            <AboutMe>SonicSwap</AboutMe>
+            <AboutMe>Swift</AboutMe>
             <AboutDes>
               Lorem ipsum dolor sit, adipisicing elit. Omnis, libero, minus
               debitis,Lorem ipsum dolor sit, adipisicing elit <br />
@@ -186,11 +211,12 @@ export default function Project({ inView, first, second }) {
             type="video/mp4"
             muted
             loop
-            onMouseEnter={(event) => event.target.play()}
-            onMouseLeave={(event) => {
-              event.target.pause();
-              event.target.currentTime = 0;
-            }}
+            autoPlay
+            // onMouseEnter={(event) => event.target.play()}
+            // onMouseLeave={(event) => {
+            //   event.target.pause();
+            //   event.target.currentTime = 0;
+            // }}
           />
         </>
       )}

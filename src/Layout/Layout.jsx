@@ -60,26 +60,16 @@ const Design3 = styled.div`
   width: 2.5rem;
   border: 2px solid var(--navTextHover);
   position: absolute;
-  top: 75%;
-  left: 5%;
-  /* @media (max-width: 610px) {
-    border: 2px solid var(--navTextHover);
-    top: 5%;
-    right: 10%;
-  } */
+  top: 35%;
+  left: 3%;
 `;
 const Design4 = styled.div`
   height: 2.5rem;
   width: 2.5rem;
   border: 2px solid var(--brown);
   position: absolute;
-  top: 15%;
+  top: 10%;
   right: 10%;
-  /* @media (max-width: 610px) {
-    border: 2px solid var(--navTextHover);
-    top: 5%;
-    right: 10%;
-  } */
 `;
 const Design5 = styled.div`
   height: 2.5rem;
@@ -89,11 +79,6 @@ const Design5 = styled.div`
   top: 90%;
   right: 30%;
   border-radius: 50%;
-  /* @media (max-width: 610px) {
-    border: 2px solid var(--navTextHover);
-    top: 5%;
-    right: 10%;
-  } */
 `;
 const Design6 = styled.div`
   height: 2.5rem;
@@ -103,11 +88,6 @@ const Design6 = styled.div`
   top: 50%;
   left: 10%;
   border-radius: 50%;
-  /* @media (max-width: 610px) {
-    border: 2px solid var(--navTextHover);
-    top: 5%;
-    right: 10%;
-  } */
 `;
 const Design7 = styled.div`
   height: 2.5rem;
@@ -116,11 +96,9 @@ const Design7 = styled.div`
   position: absolute;
   top: 80%;
   right: 15%;
-  /* @media (max-width: 610px) {
-    border: 2px solid var(--navTextHover);
-    top: 5%;
-    right: 10%;
-  } */
+  @media (max-width: 500px) {
+    right: 5%;
+  }
 `;
 const Design8 = styled.div`
   height: 2.5rem;
@@ -130,11 +108,6 @@ const Design8 = styled.div`
   top: 5%;
   right: 40%;
   border-radius: 50%;
-  /* @media (max-width: 610px) {
-    border: 2px solid var(--navTextHover);
-    top: 5%;
-    right: 10%;
-  } */
 `;
 const Img = styled.img`
   width: 22vw;
@@ -170,6 +143,7 @@ const MenuBox = styled.div`
   top: 0;
   left: 0;
   transition: all 0.3s;
+  z-index: 100;
 `;
 const AboutStyle = styled.div`
   width: 99.3vw;
@@ -195,9 +169,12 @@ const ProjectDesbox = styled.div`
   margin-left: -50%;
   gap: 0.7rem;
   margin-bottom: -3rem;
+  @media (max-width: 600px) {
+    margin-left: -35%;
+  }
 `;
 const AboutMe = styled.h1`
-  font-size: 1.6rem;
+  font-size: 1.7rem;
   font-weight: bold;
   color: var(--navTextHover);
   text-transform: uppercase;
@@ -208,10 +185,13 @@ const AboutText = styled.span`
 `;
 const NofifyBox = styled.div`
   position: fixed;
-  top: -5%;
-  right: 15%;
+  top: 12%;
+  right: 5%;
   z-index: 10000;
   transition: all 0.4s;
+  @media (max-width: 500px) {
+    right: 22%;
+  }
 `;
 const Sportlight = styled.div`
   position: absolute;
@@ -225,6 +205,7 @@ const Sportlight = styled.div`
     #00567915 15%,
     #0000 30%
   );
+  z-index: 10;
 `;
 const Logo = styled.img`
   width: 9rem;
@@ -296,7 +277,12 @@ function Layout() {
         <Design1></Design1>
       </HomeStyle>
       <MenuBox className={openMenu ? "activeMenu" : "inactiveMenu"}>
-        <MenuBar />
+        <MenuBar
+          aboutId={aboutId}
+          projectId={projectId}
+          homeId={homeId}
+          contactId={contactId}
+        />
       </MenuBox>
       <AboutStyle ref={aboutId}>
         <Sportlight ref={sportlight}></Sportlight>
@@ -308,7 +294,7 @@ function Layout() {
       <ProjectStyles id="Project" ref={projectRef}>
         <ProjectDesbox>
           <AboutMe>Portfolio</AboutMe>
-          <AboutText>Each work is specially made</AboutText>
+          <AboutText>Each piece is uniquely made</AboutText>
         </ProjectDesbox>
         <Project inView={projectInView} first={true} />
         <Project inView={projectInView} second={true} />

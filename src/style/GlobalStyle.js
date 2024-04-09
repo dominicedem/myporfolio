@@ -6,7 +6,7 @@ const GlobalStyle = createGlobalStyle`
     --Hover : #00597a;
     --background : #F7F7F7;
     --background1 : #EAEAEA;
-    --text:#1a1a1af5;
+    --text:#222222;
     --menuBack:#141414f9;
     --border: #0179A7;
     --lessText:#1212129f;
@@ -34,7 +34,7 @@ const GlobalStyle = createGlobalStyle`
         border-radius: 1rem;
     }        
     ::-webkit-scrollbar {
-        background-color:inherit;
+        background-color:transparent;
         width: 0.7vw;
     }
     @media (max-width:785px) {
@@ -61,9 +61,15 @@ const GlobalStyle = createGlobalStyle`
     }
     .visible {
         transform: translateX(0);
+        @media (max-width:500px) {
+            transform: translateY(0);
+        }
     }
     .hide {
         transform: translateX(200%);
+        @media (max-width:500px) {
+            transform: translateY(-300%);
+        }
     }
     .activeMenu {
         transform: translateX(0);
