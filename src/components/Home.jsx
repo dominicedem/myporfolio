@@ -43,7 +43,7 @@ const Text = styled.h1`
     font-size: 5rem;
   }
   @media (max-width: 410px) {
-    font-size: 4.6rem;
+    font-size: 4.5rem;
   }
 `;
 const ImgSec = styled.div`
@@ -114,8 +114,8 @@ const Socials = styled.div`
   gap: 2rem;
 `;
 const DesktopImg = styled.img`
-  width: 25rem;
-  height: 23rem;
+  width: 22em;
+  height: 22rem;
   border-top: 2px solid var(--navTextHover);
   border-right: 2px solid var(--navTextHover);
   border-radius: 50%;
@@ -199,15 +199,6 @@ const Stacked = styled.img`
   width: 2.6rem;
 `;
 
-// const SpanText = styled.span`
-//   color: var(--navTextHover);
-//   @media (max-width: 785px) {
-//     color: var(--text);
-//   }
-//   @media (max-width: 610px) {
-//     color: var(--text);
-//   }
-// `;
 const iconstyle = {
   fontSize: "2.7rem",
   cursor: "pointer",
