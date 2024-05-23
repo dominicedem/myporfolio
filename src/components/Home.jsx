@@ -3,73 +3,77 @@ import { IoLogoGithub } from "react-icons/io";
 import { FaLinkedin } from "react-icons/fa";
 import { MdOutlineWavingHand } from "react-icons/md";
 import Autotype from "./Autotype";
-import { FaQuoteLeft } from "react-icons/fa";
+// import { FaQuoteLeft } from "react-icons/fa";
 import { useContext, useState } from "react";
 import { Context } from "../App";
 
 const HomeCon = styled.div`
-  display: flex;
+  display: grid;
+  grid-template-columns: 70% 30%;
+  grid-template-rows: 70% 30%;
   width: 99.3vw;
-  align-items: center;
-  gap: 5rem;
-  padding: 21rem 5rem 0 12rem;
-  @media (max-width: 930px) {
-    gap: 2rem;
-    padding: 19rem 3rem 0 9rem;
+  height: 100%;
+  column-gap: 1rem;
+  padding: 0 5rem 0 5rem;
+  align-items: end;
+  @media (max-width: 1000px) {
+    grid-template-columns: 68% 32%;
   }
-  @media (max-width: 785px) {
-    gap: 1rem;
-    padding: 19rem 3rem 0 5rem;
+  @media (max-width: 900px) {
+    grid-template-rows: 40% 50% 10%;
+    grid-template-columns: 1fr;
+    padding-top: 10rem;
+    padding-bottom: 4rem;
+    row-gap: 1rem;
   }
-  @media (max-width: 660px) {
-    gap: 1.5rem;
-    padding: 19rem 2rem 0 2rem;
+  @media (max-width: 900px) {
+    padding-bottom: 8rem;
+    row-gap: 2rem;
   }
-  @media (max-width: 610px) {
-    justify-content: center;
-    padding: 10rem 0 0 0;
-  }
-  @media (max-width: 400px) {
-    justify-content: center;
-    padding: 8rem 0 0 0;
+  @media (max-width: 460px) {
+    padding: 10rem 0 8rem 0;
+    row-gap: 2rem;
   }
 `;
 const Text = styled.h1`
   color: var(--text);
   font-size: 5rem;
-  @media (max-width: 865px) {
-    font-size: 4rem;
-  }
-  @media (max-width: 600px) {
-    font-size: 5.5rem;
-  }
-  @media (max-width: 610px) {
-    font-size: 5rem;
-  }
-  @media (max-width: 410px) {
-    font-size: 4.5rem;
-  }
-`;
-const ImgSec = styled.div`
-  display: flex;
-  width: 45%;
-  @media (max-width: 610px) {
+  @media (max-width: 900px) {
     display: none;
   }
 `;
+const TextDesMobile = styled.div`
+  display: none;
+  @media (max-width: 900px) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+`;
+
 const ImgBox = styled.div`
-  border: 3px solid var(--border);
-  border-radius: 1rem;
-  width: 90%;
-  height: 30vh;
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-  padding-right: 2rem;
-  align-items: end;
-  font-size: 1.6rem;
-  @media (max-width: 840px) {
-    width: 100%;
+  width: 100%;
+  margin-left: -8rem;
+  border: 1.5px solid var(--border);
+  height: 70%;
+  @media (max-width: 900px) {
+    display: flex;
+    justify-content: center;
+    width: 40%;
+    grid-row: 1/2;
+    justify-self: center;
+    margin-left: 0;
+    height: fit-content;
+    border: none;
+  }
+  @media (max-width: 800px) {
+    width: 28rem;
+  }
+  @media (max-width: 600px) {
+    width: 25rem;
+  }
+  @media (max-width: 400px) {
+    width: 23rem;
   }
 `;
 const TextDes = styled.div`
@@ -77,29 +81,23 @@ const TextDes = styled.div`
   flex-direction: column;
   align-items: start;
   gap: 1.5rem;
-  width: 55%;
-  @media (max-width: 610px) {
+  width: 100%;
+  @media (max-width: 900px) {
+    justify-self: center;
     align-items: center;
+    width: 70%;
+    align-self: start;
   }
-  @media (max-width: 610px) {
-    width: 90vw;
+  @media (max-width: 640px) {
+    justify-self: center;
+    align-items: center;
+    width: 100%;
+    align-self: start;
   }
 `;
-const Subtext = styled.div`
-  font-size: 2rem;
-  color: var(--lessText);
-  @media (max-width: 610px) {
-    display: none;
-  }
-  @media (max-width: 610px) {
-    font-size: 2rem;
-  }
-  @media (max-width: 550px) {
-    font-size: 1.8rem;
-  }
-  @media (max-width: 375px) {
-    font-size: 1.7rem;
-  }
+const HeadText = styled.h1`
+  color: var(--text);
+  font-size: 5rem;
 `;
 const SubStacktext = styled.div`
   color: var(--Text);
@@ -108,9 +106,6 @@ const SubStacktext = styled.div`
   font-weight: bold;
   font-size: 2rem;
   gap: 1rem;
-  @media (max-width: 600px) {
-    font-size: 2.2rem;
-  }
 `;
 const Socials = styled.div`
   display: flex;
@@ -118,75 +113,38 @@ const Socials = styled.div`
   gap: 2rem;
 `;
 const DesktopImg = styled.img`
-  width: 22em;
-  height: 22rem;
-  border-top: 2px solid var(--navTextHover);
-  border-right: 2px solid var(--navTextHover);
-  border-radius: 50%;
-  display: none;
-  @media (max-width: 610px) {
-    display: inline-block;
+  width: 100%;
+  margin-left: -5rem;
+  @media (max-width: 900px) {
+    margin-left: 0;
+    width: 85%;
+  }
+  @media (max-width: 800px) {
+    width: 100%;
   }
 `;
 const Techbox = styled.div`
+  grid-column: 1/-1;
   display: flex;
   align-items: center;
+  justify-content: start;
+  align-self: center;
   gap: 2rem;
-  margin-top: 15rem;
-  padding-left: 12rem;
-  width: fit-content;
-  @media (max-width: 930px) {
-    gap: 2rem;
-    padding-left: 9rem;
+  width: 100%;
+  @media (max-width: 900px) {
+    justify-content: center;
+    align-items: start;
+    height: 100%;
   }
-  @media (max-width: 785px) {
-    gap: 1.5rem;
-    padding-left: 5rem;
-  }
-  @media (max-width: 660px) {
+  @media (max-width: 510px) {
     gap: 1rem;
-    padding-left: 2rem;
   }
-  @media (max-width: 610px) {
-    width: fit-content;
-    margin: 3rem auto;
-  }
-  @media (max-width: 550px) {
-    font-size: 1.5rem;
-  }
-  @media (max-width: 400px) {
-    font-size: 1rem;
-  }
-`;
-const AutoWidth = styled.div`
-  width: 60%;
 `;
 const AutoWidthmobile = styled.div`
-  width: 60%;
+  width: 70%;
   height: 12vh;
-  display: none;
-  @media (max-width: 610px) {
-    display: inline-block;
-  }
-  @media (max-width: 600px) {
-    display: inline-block;
-    width: 70%;
-  }
-  @media (max-width: 550px) {
-    display: inline-block;
-    width: 75%;
-  }
-  @media (max-width: 525px) {
-    display: inline-block;
-    width: 80%;
-  }
-  @media (max-width: 450px) {
-    display: inline-block;
+  @media (max-width: 900px) {
     width: 90%;
-  }
-  @media (max-width: 375px) {
-    display: inline-block;
-    width: 80%;
   }
 `;
 const Stack = styled.img`
@@ -220,32 +178,30 @@ const iconstyles = {
   marginBottom: "-7px",
   color: "var(--text)",
 };
-const Quotestyle = {
-  fontSize: "2.7rem",
-  alignSelf: "center",
-  marginLeft: "-7rem",
-  paddingTop: "1rem",
-};
+
 export default function Home({ inView }) {
   const [faLinkedin, setFaLinkedin] = useState();
   const [ioLogoGithub, setIoLogoGithub] = useState();
+
   const { dispatch, state, homeRef } = useContext(Context);
+
   inView && !state.homeActive && dispatch({ type: "Home", payload: true });
   return (
     <>
       <HomeCon>
         <TextDes>
-          <DesktopImg src="/dom.png" />
-          <Text ref={homeRef}>
+          <Text type="desktop" ref={homeRef}>
             Front-End React <br />
             Developer <MdOutlineWavingHand style={iconstyles} />
           </Text>
-          <Subtext>
-            Hi, I'm Edem Dominic. A front-end react
-            <br /> developer based in Nigeria
-          </Subtext>
+          <TextDesMobile type="mobile" ref={homeRef}>
+            <HeadText>Front-End React</HeadText>
+            <HeadText>
+              Developer <MdOutlineWavingHand style={iconstyles} />
+            </HeadText>
+          </TextDesMobile>
           <AutoWidthmobile>
-            <Autotype mobile={true} />
+            <Autotype />
           </AutoWidthmobile>
           <Socials>
             <FaLinkedin
@@ -266,27 +222,22 @@ export default function Home({ inView }) {
             />
           </Socials>
         </TextDes>
-        <ImgSec>
-          <ImgBox>
-            <FaQuoteLeft style={Quotestyle} />
-            <AutoWidth>
-              <Autotype />
-            </AutoWidth>
-          </ImgBox>
-        </ImgSec>
+        <ImgBox>
+          <DesktopImg src="/dom.png" />
+        </ImgBox>
+        <Techbox ref={homeRef}>
+          <SubStacktext>
+            Tech stack <span style={{ marginTop: "-2px" }}>|</span>
+          </SubStacktext>
+          <Stacks src="htmllogo.png" />
+          <Stackss src="csslogo.png" />
+          <Stack src="js.png" />
+          <Stack src="styledlogo.png" />
+          <Stack src="reactlogo.png" />
+          <Stack src="reduxlogo.png" />
+          <Stacked src="tail.png" />
+        </Techbox>
       </HomeCon>
-      <Techbox>
-        <SubStacktext>
-          Tech stack <span style={{ marginTop: "-2px" }}>|</span>
-        </SubStacktext>
-        <Stacks src="htmllogo.png" />
-        <Stackss src="csslogo.png" />
-        <Stack src="js.png" />
-        <Stack src="styledlogo.png" />
-        <Stack src="reactlogo.png" />
-        <Stack src="reduxlogo.png" />
-        <Stacked src="tail.png" />
-      </Techbox>
     </>
   );
 }

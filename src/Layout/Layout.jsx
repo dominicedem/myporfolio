@@ -21,6 +21,12 @@ const HomeStyle = styled.div`
   position: relative;
   background-image: url("/backimage.jpg");
   background-size: cover;
+  @media (max-width: 900px) {
+    height: fit-content;
+  }
+  @media (max-width: 600px) {
+    background-position: 30% 30%;
+  }
 `;
 const NavStyle = styled.div`
   width: 99.3vw;
@@ -28,31 +34,20 @@ const NavStyle = styled.div`
   top: 0;
   left: 0;
   z-index: 100;
-  backdrop-filter: blur(3px);
+  backdrop-filter: blur(5px);
 `;
 const Design1 = styled.div`
   height: 2.5rem;
   width: 2.5rem;
   border: 2px solid var(--border);
   position: absolute;
-  top: 80%;
-  right: 10%;
-  border-radius: 50%;
-  @media (max-width: 655px) {
-    display: none;
-  }
-`;
-const Design2 = styled.div`
-  height: 2.5rem;
-  width: 2.5rem;
-  border: 2px solid var(--brown);
-  position: absolute;
   top: 15%;
-  right: 55%;
-  @media (max-width: 610px) {
-    border: 2px solid var(--navTextHover);
-    top: 5%;
-    right: 10%;
+  left: 45%;
+  border-radius: 50%;
+  @media (max-width: 900px) {
+    top: 15%;
+    left: 15%;
+    border: 2px solid var(--background);
   }
 `;
 const Design3 = styled.div`
@@ -60,17 +55,8 @@ const Design3 = styled.div`
   width: 2.5rem;
   border: 2px solid var(--navTextHover);
   position: absolute;
-  top: 30%;
-  left: 3%;
-`;
-const Design4 = styled.div`
-  height: 2.8rem;
-  width: 2.8rem;
-  border: 2px solid var(--brown);
-  border-radius: 50%;
-  position: absolute;
   top: 5%;
-  right: 10%;
+  left: 30%;
 `;
 const Design5 = styled.div`
   height: 2.5rem;
@@ -110,45 +96,17 @@ const Design8 = styled.div`
   right: 40%;
   border-radius: 50%;
 `;
-const Img = styled.img`
-  width: 22vw;
-  z-index: 10;
-  display: inline-block;
-  border-bottom: 4px solid var(--border);
-  border-radius: 1rem;
-  position: absolute;
-  top: 32vh;
-  right: 24vw;
-  @media (max-width: 910px) {
-    width: 24vw;
-    top: 33vh;
-    right: 23vw;
-  }
-  @media (max-width: 800px) {
-    width: 24vw;
-    top: 36vh;
-  }
-  @media (max-width: 850px) {
-    width: 27vw;
-  }
-  @media (max-width: 785px) {
-    top: 32vh;
-    width: 28vw;
-  }
-  @media (max-width: 610px) {
-    display: none;
-  }
-`;
 const MenuBox = styled.div`
   position: fixed;
   top: 0;
   left: 0;
   transition: all 0.3s;
   z-index: 100;
+  backdrop-filter: blur(5px);
 `;
 const AboutStyle = styled.div`
   width: 99.3vw;
-  padding: 17rem 0 21rem 0;
+  padding: 17rem 0 20rem 0;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -160,8 +118,8 @@ const AboutStyle = styled.div`
 `;
 const ProjectStyles = styled.div`
   width: 99.3vw;
-  padding: 13rem 0 2rem 0;
-  gap: 10rem;
+  padding: 8rem 0 2rem 0;
+  gap: 12rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -170,15 +128,13 @@ const ProjectDesbox = styled.div`
   flex-direction: column;
   display: flex;
   align-items: start;
-  margin-left: -50%;
+  width: 100%;
   gap: 0.7rem;
   margin-bottom: -3rem;
-  @media (max-width: 600px) {
-    margin-left: -35%;
-  }
+  padding: 0 7%;
 `;
 const AboutMe = styled.h1`
-  font-size: 1.7rem;
+  font-size: 2.8rem;
   font-weight: bold;
   color: var(--navTextHover);
   text-transform: uppercase;
@@ -187,7 +143,7 @@ const AboutMe = styled.h1`
   }
 `;
 const AboutText = styled.span`
-  font-size: 1.8rem;
+  font-size: 2rem;
   color: var(--Text);
   @media (max-width: 600px) {
     font-size: 2rem;
@@ -202,20 +158,6 @@ const NofifyBox = styled.div`
   @media (max-width: 500px) {
     right: 22%;
   }
-`;
-const Sportlight = styled.div`
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  cursor: pointer;
-  background: radial-gradient(
-    circle at var(--x) var(--y),
-    #00567915 15%,
-    #0000 30%
-  );
-  z-index: 10;
 `;
 const Logo = styled.img`
   width: 9rem;
@@ -259,17 +201,15 @@ function Layout() {
   let aboutId = useRef();
   let projectId = useRef();
   let contactId = useRef();
-  let sportlight = useRef();
 
   useEffect(() => {
     projectId.current = document.getElementById("Project");
-    const light = sportlight.current;
-    light.addEventListener("mousemove", (e) => {
-      light.style.setProperty("--x", e.clientX + "px");
-      light.style.setProperty("--y", e.clientY + "px");
-    });
+    // const light = sportlight.current;
+    // light.addEventListener("mousemove", (e) => {
+    //   light.style.setProperty("--x", e.clientX + "px");
+    //   light.style.setProperty("--y", e.clientY + "px");
+    // });
   });
-
   return (
     <LayoutStyle>
       <NofifyBox className={notify ? "visible" : "hide"}>
@@ -284,9 +224,7 @@ function Layout() {
         />
       </NavStyle>
       <HomeStyle ref={homeId}>
-        <Img src="/dom.png" />
         <Home inView={homeInView} />
-        <Design2></Design2>
         <Design1></Design1>
       </HomeStyle>
       <MenuBox className={openMenu ? "activeMenu" : "inactiveMenu"}>
@@ -298,14 +236,12 @@ function Layout() {
         />
       </MenuBox>
       <AboutStyle ref={aboutId}>
-        <Sportlight ref={sportlight}></Sportlight>
         <About inView={aboutInVeiw} />
         <Design3></Design3>
-        <Design4></Design4>
         <Design5></Design5>
       </AboutStyle>
-      <ProjectStyles id="Project" ref={projectRef}>
-        <ProjectDesbox>
+      <ProjectStyles id="Project">
+        <ProjectDesbox ref={projectRef}>
           <AboutMe>Portfolio</AboutMe>
           <AboutText>Each piece is uniquely made</AboutText>
         </ProjectDesbox>

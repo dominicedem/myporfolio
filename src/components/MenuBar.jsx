@@ -16,7 +16,7 @@ const MenuBarBox = styled.div`
   position: relative;
 `;
 const List = styled.span`
-  font-size: 2rem;
+  font-size: 3rem;
   color: var(--navTextHover);
   text-transform: uppercase;
   &:hover {

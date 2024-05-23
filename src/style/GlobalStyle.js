@@ -7,6 +7,7 @@ const GlobalStyle = createGlobalStyle`
     --background : #F7F7F7;
     --background1 : #EAEAEA;
     --text:#222222;
+    --navBack:#8484841f;
     --menuBack:#141414f9;
     --border: #0179A7;
     --lessText:#1212129f;
@@ -29,8 +30,17 @@ const GlobalStyle = createGlobalStyle`
     }
     body {
         font-family: sans-serif;
-        line-height: 1.2;
+        line-height: 1.1;
     }
+    
+    .active {
+        color: #0179A7;
+    }
+
+    .notactive {
+        color: var(--text);
+    }
+
     ::-webkit-scrollbar-thumb {
         background-color: #00597a;
         border-radius: 1rem;
@@ -48,9 +58,6 @@ const GlobalStyle = createGlobalStyle`
         html {
             font-size: 55%;
         }
-    }
-    .active {
-        color: #0179A7;
     }
     .roll::before {
         position: absolute;
@@ -70,7 +77,7 @@ const GlobalStyle = createGlobalStyle`
     .hide {
         transform: translateX(200%);
         @media (max-width:500px) {
-            transform: translateY(-300%);
+            transform: translateY(-400%);
         }
     }
     .activeMenu {

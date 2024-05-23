@@ -10,41 +10,38 @@ const NavCon = styled.div`
   justify-content: space-between;
   width: 100vw;
   padding: 2.5vh 1vw;
-  background: var(--background);
+  background: var(--navBack);
   @media (max-width: 600px) {
     padding: 2.5vh 3vw;
   }
 `;
 const NavName = styled.p`
-  font-size: 1.8rem;
+  font-size: 2rem;
   font-weight: bold;
   color: var(--text);
-  @media (max-width: 600px) {
-    font-size: 2.4rem;
-  }
 `;
 const NameBox = styled.div`
   display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: 0.2rem;
 `;
 const NavList = styled.ul`
   display: flex;
   align-items: center;
   gap: 2rem;
+  @media (max-width: 700px) {
+    gap: 0.8rem;
+  }
   @media (max-width: 600px) {
     display: none;
   }
 `;
 const NavLogo = styled.img`
-  width: 3rem;
-  @media (max-width: 600px) {
-    width: 4rem;
-  }
+  width: 3.8rem;
 `;
 const Lists = styled.li`
-  font-size: 1.8rem;
   color: var(--text);
+  font-size: 2rem;
   list-style: none;
   padding: 0.5rem 1rem;
   border-radius: 1rem;

@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { MdCancel } from "react-icons/md";
 
-const Tests = styled.div`
+const NotifyStyle = styled.div`
   font-size: 1.8rem;
   color: var(--Text);
   position: relative;
@@ -33,9 +33,9 @@ const iconstyle = {
 };
 export default function Notify({ notify }) {
   return (
-    <Tests className={notify && "roll"}>
+    <NotifyStyle className={notify && "roll"}>
       <MdCancel style={iconstyle} />
       Under developement
-    </Tests>
+    </NotifyStyle>
   );
 }

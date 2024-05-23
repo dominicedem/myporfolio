@@ -58,11 +58,10 @@ function Footer({ inView }) {
     !projectInView &&
     !state.contactsActive &&
     dispatch({ type: "Contacts", payload: true });
-  console.log(inView, state.contactsActive);
   return (
     <FooterStyle>
       <TextBox>
-        <Text>Learning, music lover, coding and staying up to</Text>
+        <Text>Learning, coding, music lover and staying up to</Text>
         <Text> date with modern technologies</Text>
       </TextBox>
       <SocialBox>
