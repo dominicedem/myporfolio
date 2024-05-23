@@ -171,14 +171,13 @@ export default function Project({ inView, first, second }) {
               <Text>Styled-component</Text>
             </Tech>
             <Content>
-              <Texts>
+              <Texts
+                onClick={() =>
+                  window.open(import.meta.env.VITE_CRYPDOM, "blank")
+                }
+              >
                 Code
-                <IoLogoGithub
-                  style={iconstyle}
-                  onClick={() =>
-                    window.open(import.meta.env.VITE_CRYPDOM, "blank")
-                  }
-                />
+                <IoLogoGithub style={iconstyle} />
               </Texts>
               <Texts
                 onClick={() =>
@@ -211,14 +210,13 @@ export default function Project({ inView, first, second }) {
               <Text>Styled-component</Text>
             </Tech>
             <Content>
-              <Texts>
+              <Texts
+                onClick={() =>
+                  window.open(import.meta.env.VITE_MYGITHUB, "blank")
+                }
+              >
                 Code
-                <IoLogoGithub
-                  style={iconstyle}
-                  onClick={() =>
-                    window.open(import.meta.env.VITE_MYGITHUB, "blank")
-                  }
-                />
+                <IoLogoGithub style={iconstyle} />
               </Texts>
               <Texts onClick={() => activate()}>
                 Live demo <TbExternalLink style={demostyle} />
