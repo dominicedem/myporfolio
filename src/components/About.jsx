@@ -101,6 +101,9 @@ const AboutDes = styled.p`
   font-size: 1.6rem;
   color: var(--lessText);
   margin-top: 1rem;
+  letter-spacing: 0.5px;
+  line-height: 1.25;
+  text-justify: distribute;
   @media (max-width: 900px) {
     width: 70%;
   }
@@ -135,21 +138,22 @@ export default function About({ inView }) {
         <AboutMe>About me</AboutMe>
         <Box>
           <AboutText type="desktop">
-            A passionate Front-End Developer based in Lagos, Nigeria.
+            A passionate Front-End Developer based in Lagos, Spain.
           </AboutText>
           <AboutTextMobile>
             <Span>A passionate Front-End Developer</Span>
-            <Span>based in Lagos Nigeria.</Span>
+            <Span>based in Lagos Spain.</Span>
           </AboutTextMobile>
           <AboutDes>
-            Lorem ipsum dolor sit, adipisicing elit. Omnis, libero, cum vel
-            minus debitis, tempora nobis asperiores magni quam quaerat
-            temporibus tenetur exercitationem iste nemo. debitis, tempora nobis
-            asperiores magni quam quaerat temporibus tenetur exercitationem iste
-            nemo. exercitationem iste nemo. debitis tempora nobis asperiores
-            magni quam quaerat temporibus tenetur exercitationem iste nemo.
-            nemo. exercitationem iste nemo. debitis tempora nobis asperiores
-            magni quam quaerat temporibus tenetur exercitationem iste nemo.
+            I'm a passionate front-end developer with over 2 years of experience
+            and a strong focus on building engaging and dynamic web applications
+            using React. I have a keen interest in the world of web3 and
+            blockchain technology, particularly on the Solana network. My
+            journey in tech has been fueled by a desire to blend creativity with
+            code, crafting seamless user experiences and pushing the boundaries
+            of what's possible on the web. In addition to my expertise in
+            front-end development, I'm constantly exploring new technologies and
+            frameworks to stay ahead of the curve.
           </AboutDes>
         </Box>
       </DesBox>

@@ -5,7 +5,7 @@ export default function Autotype() {
     <>
       <TypeAnimation
         sequence={[
-          "Hi, I'm Edem Dominic. A front-end react developer based in Nigeria.",
+          "Hi, I'm alberto Dom. A front-end react developer based in spain.",
           2000,
           "I'm very passionate about frondend and always ready to learn!",
           2000,

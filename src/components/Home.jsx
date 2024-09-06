@@ -113,7 +113,12 @@ const Socials = styled.div`
   gap: 2rem;
 `;
 const DesktopImg = styled.img`
-  width: 100%;
+  height: 28rem;
+  width: 30rem;
+  object-fit: cover;
+  aspect-ratio: 1/2;
+  border-radius: 2rem;
+  /* width: 100%; */
   margin-left: -5rem;
   @media (max-width: 900px) {
     margin-left: 0;
@@ -206,24 +211,24 @@ export default function Home({ inView }) {
           <Socials>
             <FaLinkedin
               style={faLinkedin ? iconstylehover : iconstyle}
-              onClick={() =>
-                window.open(import.meta.env.VITE_MYLINKEDIN, "blank")
-              }
+              // onClick={() =>
+              //   window.open(import.meta.env.VITE_MYLINKEDIN, "blank")
+              // }
               onMouseEnter={() => setFaLinkedin(true)}
               onMouseLeave={() => setFaLinkedin(false)}
             />
             <IoLogoGithub
               style={ioLogoGithub ? iconstylehover : iconstyle}
-              onClick={() =>
-                window.open(import.meta.env.VITE_MYGITHUB, "blank")
-              }
+              // onClick={() =>
+              //   window.open(import.meta.env.VITE_MYGITHUB, "blank")
+              // }
               onMouseEnter={() => setIoLogoGithub(true)}
               onMouseLeave={() => setIoLogoGithub(false)}
             />
           </Socials>
         </TextDes>
         <ImgBox>
-          <DesktopImg src="/dom.png" />
+          <DesktopImg src="/pics.jpeg" />
         </ImgBox>
         <Techbox ref={homeRef}>
           <SubStacktext>

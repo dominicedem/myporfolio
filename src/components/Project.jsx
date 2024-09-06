@@ -37,6 +37,9 @@ const AboutMe = styled.h1`
   } */
 `;
 const AboutDes = styled.p`
+  letter-spacing: 0.5px;
+  line-height: 1.25;
+  text-justify: distribute;
   font-size: 1.6rem;
   color: var(--lessText);
   margin-top: 1.5rem;
@@ -159,12 +162,12 @@ export default function Project({ inView, first, second }) {
           <DesBox>
             <AboutMe>Crypdom</AboutMe>
             <AboutDes>
-              Lorem ipsum dolor sit, adipisicing elit. Omnis, libero, minus
-              debitis,Lorem ipsum dolor sit, adipisicing elit <br />
-              tempora nobis asperiores magni quam quaerat exercitationem iste
-              nemo. debitis, <br />
-              tempora nobis asperiores magni quam quaerat temporibus tenetur
-              exercitationem iste nemo. exercitationem iste nemo. debitis,{" "}
+              Crypdom is an innovative decentralized application (dApp) built on
+              the Solana blockchain, designed to provide a seamless experience
+              for cryptocurrency enthusiasts. The platform leverages Solana's
+              high-performance capabilities to offer fast, secure, and low-cost
+              transactions, making it ideal for a range of decentralized finance
+              (DeFi) activities.
             </AboutDes>
             <Tech>
               <Text>React</Text>
@@ -172,9 +175,9 @@ export default function Project({ inView, first, second }) {
             </Tech>
             <Content>
               <Texts
-                onClick={() =>
-                  window.open(import.meta.env.VITE_CRYPDOM, "blank")
-                }
+              // onClick={() =>
+              //   window.open(import.meta.env.VITE_CRYPDOM, "blank")
+              // }
               >
                 Code
                 <IoLogoGithub style={iconstyle} />
@@ -193,17 +196,13 @@ export default function Project({ inView, first, second }) {
       {second && (
         <>
           <DesBox>
-            <AboutMe ref={projectRef}>E-Commerce</AboutMe>
+            <AboutMe ref={projectRef}>Zigma-Nft</AboutMe>
             <AboutDes>
-              Lorem ipsum dolor sit, adipisicing elit. Omnis, libero, cum vel
-              minus debitis, dolor sit, adipisicing elit. Omjyvjkbjk
-              <br />
-              minus debitis, dolor sit, adipisicing elit. Omjyvjkbjk minus
-              debitis, dolor sit, adipisicing elit. Omjyvjkbjk
-              <br />
-              Lorem ipsum dolor sit, adipisicing elit. Omnis, libero. Lorem
-              ipsum dolor sit, adipisicing elit. Omnis, libero. Lorem ipsum
-              dolor sit, adipisicing elit. Omnis, libero.
+              zigmaNft is a next-generation NFT platform designed to provide a
+              seamless experience for digital art creators, collectors, and
+              enthusiasts. Built with a focus on user experience and
+              accessibility, zigmaNft allows users to mint, buy, sell, and
+              showcase non-fungible tokens (NFTs) with ease.
             </AboutDes>
             <Tech>
               <Text>React</Text>
@@ -211,9 +210,9 @@ export default function Project({ inView, first, second }) {
             </Tech>
             <Content>
               <Texts
-                onClick={() =>
-                  window.open(import.meta.env.VITE_MYGITHUB, "blank")
-                }
+              // onClick={() =>
+              //   window.open(import.meta.env.VITE_MYGITHUB, "blank")
+              // }
               >
                 Code
                 <IoLogoGithub style={iconstyle} />
@@ -224,7 +223,7 @@ export default function Project({ inView, first, second }) {
             </Content>
           </DesBox>
           <Videos
-            src="/clip.mp4"
+            src="/mov.webm"
             type="video/mp4"
             muted
             loop
